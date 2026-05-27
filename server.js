@@ -5,6 +5,18 @@ const PORT = 3000;
 try {
   const server = net.createServer((socket) => {
     console.log("client connected");
+
+    socket.on("data", (buffer) => {
+      var message = buffer.toString();
+      message = message.toLocaleUpperCase();
+
+      console.log("Client: ", message);
+      socket.write(`Server received: ${message}`);
+    });
+
+    socket.on("end", () => {
+      console.log("client disconnected");
+    });
   });
 
   server.listen(PORT, () => {
