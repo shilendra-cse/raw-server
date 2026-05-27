@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "dev:server": "node server.js",
+    "dev:chat": "node chatServer.js",
     "lint": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
